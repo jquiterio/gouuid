@@ -2,12 +2,12 @@
 
 ## install
 
-go get github.com/jquiterio/gouuid
+go get github.com/jquiterio/uuid
 
 ## use
 
 ```
-import uuid "github.com/jquiterio/gouuid"
+import "github.com/jquiterio/uuid"
 
 func main() {
   // Create a new UUID
