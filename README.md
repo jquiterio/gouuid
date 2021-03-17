@@ -1,4 +1,4 @@
-# gouuid
+# go uuid
 
 ## install
 
