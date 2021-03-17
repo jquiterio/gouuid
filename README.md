@@ -25,17 +25,22 @@ func main() {
   newuuid := new(UUID)
   ok := uuid.Compare(id,newuuid)
 
-  // As Database ID
+}
+```
 
-  type User struct {
-    ID uuid.UUID `gorm:"type:uuid"`
-    ProfileID uuid.UUID `gorm:"type:uuid"`
-    Name string
-  }
+### As Database ID
 
-  type Prodile struct {
-    ID uuid.UUID `gorm:"type:uuid"`
-    Name string
-  }
+```
+// As Database ID
+
+type User struct {
+  ID uuid.UUID `gorm:"type:uuid"`
+  ProfileID uuid.UUID `gorm:"type:uuid"`
+  Name string
+}
+
+type Prodile struct {
+  ID uuid.UUID `gorm:"type:uuid"`
+  Name string
 }
 ```
