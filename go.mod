@@ -1,4 +1,4 @@
-module quiterio.eu/uuid
+module github.com/jquiterio/gouuid
 
 go 1.15
 
