@@ -59,21 +59,21 @@ func (uuid UUID) Value() (driver.Value, error) {
 	return str, nil
 }
 
-func (uuid *UUID) Scan(src interface{}) error {
-	switch src := src.(type) {
+func (uuid *UUID) Scan(value interface{}) error {
+	switch value := value.(type) {
 	case nil:
 		return nil
 	case []byte:
-		if len(src) == 16 {
-			return uuid.Scan(string(src))
+		if len(value) == 16 {
+			return uuid.Scan(uuid.String())
 		}
-		copy((*uuid)[:], src)
+		copy((*uuid)[:], value)
 		return nil
 	case string:
 		str := uuid.String()
 		_, err := ToUUID(str)
 		return err
 	default:
-		return fmt.Errorf("Unable to convert to UUID")
+		return fmt.Errorf("unable to convert to UUID")
 	}
 }
