@@ -15,11 +15,8 @@ var _ = check.Suite(&test{})
 
 func (s *test) TestNew(c *check.C) {
 	uuid := New()
-	str := uuid.String()
+	str := uuid.ToString()
 	u, err := ToUUID(str)
-	//fmt.Println(str)
-
-	// from string to uuid
 
 	fmt.Println(u)
 	c.Assert(err, check.IsNil)
@@ -31,6 +28,6 @@ func BenchmarkUUID(b *testing.B) {
 	uuid := New()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		uuid.String()
+		uuid.ToString()
 	}
 }
